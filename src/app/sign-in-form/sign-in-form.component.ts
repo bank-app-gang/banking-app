@@ -52,14 +52,13 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient)
   get f(){return this.logInForm.controls;}
   get g(){return this.signUpForm.controls;}
 
+  
+// function called when user click login button, makes api call to the server,
+//server returns a string stored in class variable returnMessage 
   logInFormHandler(e)
  {
-  var newUsername=this.f.username.value;
-  var newPassword=this.f.password.value;
-
   var credentials={username: this.f.username.value, password:this.f.password.value}
   
-
   this.http.post('/axle/login',credentials, {responseType:'text'}).subscribe((res) => 
   {
     this.returnMessage=res;

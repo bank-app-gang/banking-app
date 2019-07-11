@@ -3,7 +3,7 @@ import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from '../app.component';
 import {UserComponent} from '../user/user.component';
-
+import { HttpClient } from '@angular/common/http'
 
 
 @Component({
@@ -28,7 +28,7 @@ signUpForm:FormGroup;
  showSignUp:boolean;
  returnMessage:string;
   
-constructor(private formBuilder: FormBuilder)
+constructor(private formBuilder: FormBuilder, private http: HttpClient)
 {
 
 }
@@ -57,16 +57,18 @@ constructor(private formBuilder: FormBuilder)
   var newUsername=this.f.username.value;
   var newPassword=this.f.password.value;
 
-  for ( var i=0; i<this.userList.length;i++)
+  var credentials={username: this.f.username.value, password:this.f.password.value}
+  
+
+  this.http.post('/axle/login',credentials, {responseType:'text'}).subscribe((res) => 
   {
-    if (this.userList[i].username==newUsername && this.userList[i].password==newPassword)
-    {
-   this.returnMessage='succesful Login '+ newUsername;
-   return;
-    }
+    this.returnMessage=res;
+  });
+
   }
-  this.returnMessage='wrong username/password';
-  }
+
+
+
   signUpFormHandler(e)
   {
 

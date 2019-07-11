@@ -1,6 +1,6 @@
 #userList
 {
-  border: 1px solid black;
+  border: 1px solid lightgreen;
   border-collapse:collapse;
   width:20%;
   top:0%;
@@ -10,7 +10,7 @@
 
 a
 {
-  color:blue;
+  color:lightsalmon;
   text-underline-position:alphabetic;
   cursor:pointer;
 }

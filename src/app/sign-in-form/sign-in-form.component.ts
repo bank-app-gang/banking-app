@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from '../app.component';
 import {UserComponent} from '../user/user.component';
 import { HttpClient } from '@angular/common/http'
+import { AuthenticateService } from '../authenticate.service';
 
 
 @Component({
@@ -26,9 +27,9 @@ signUpForm:FormGroup;
 
   showLogIn:boolean;
  showSignUp:boolean;
- returnMessage:string;
+ returnMessage:any;
   
-constructor(private formBuilder: FormBuilder, private http: HttpClient)
+constructor(private formBuilder: FormBuilder, private http: HttpClient, private authenticateService: AuthenticateService)
 {
 
 }
@@ -49,7 +50,7 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient)
  this.returnMessage='';
   }
 
-  get f(){return this.logInForm.controls;}
+  get f(){return this.logInForm.controls;}// function that returns user inputs (login and password) in login form
   get g(){return this.signUpForm.controls;}
 
   
@@ -57,13 +58,23 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient)
 //server returns a string stored in class variable returnMessage 
   logInFormHandler(e)
  {
+   
   var credentials={username: this.f.username.value, password:this.f.password.value}
-  
-  this.http.post('http://10.173.200.170:3000/axle/login',credentials, {responseType:'text'}).subscribe((res) => 
+  this.authenticateService.verifyFullCredentials(credentials).subscribe() // sends to authenticate token 
+  if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login)
   {
-    this.returnMessage=res;
-  });
-
+    this.returnMessage='Succesful Login';
+    setTimeout((function()
+    {
+      var x=0;
+    }
+    ),3000)
+    //place routing statement HERE!!!!
+  }
+  else
+  {
+    this.returnMessage='Invalid Credentials';
+  }
   }
 
 

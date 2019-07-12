@@ -9,40 +9,40 @@
     <input type="password" formControlName="password" name="password" placeholder="password" />
     <br />
     <input type="submit" /><br />
-    Don't have an account yet ? <a (click)="switchFormDisplay()">Register</a>
+     go to your account ? <a (click)="switchFormDisplay()">My accounts</a>
   </form>
 
-  <nav>
-    <a routerLink="/myaccount" routerLinkActive="active">submit</a>
- 
-  </nav>
-  <router-outlet></router-outlet>
 
-  <form [formGroup]="signUpForm" (ngSubmit)="signUpFormHandler()" *ngIf="showSignUp">
+ <router-outlet></router-outlet>
 
-    <h1>Sign Up</h1>
-    <div id="returnMessage" [innerHTML]="returnMessage"></div>
-    <input type="text" formControlName="username" name="username" placeholder="username" />
-    <br />
-    <input type="password" formControlName="password" name="password" placeholder="password" />
-    <br />
-    <input type="password" formControlName="repassword" name="repassword" placeholder=" re enter password" />
-    <br />
-    <input type="submit" /><br />
-    Already have an account? <a (click)="switchFormDisplay()">Log In</a>
+<form [formGroup]="signUpForm" (ngSubmit)="signUpFormHandler()" *ngIf="showSignUp">
+
+    <h1>Your accounts</h1>
+    <button onclick="Transfer()">My Accounts</button>
+    <button onclick="Transfer()">Transactions</button>
+    <button onclick="Transfer()">Transfer</button>
+    <button onclick="Transfer()">Settings</button>
+    <button onclick="Transfer()">Contact Support</button>
+    <button onclick="">Contact Support</button>
+    Back to login! <a (click)="switchFormDisplay()">Log In</a>
   </form>
 
 </div>
+<!---- 
 <nav class="navbar navbar-expand-lg navbar-light" style="background-color:orange;">
-  <a class="navbar-brand brand-custom" href="#">My Account</a>
+  <a class="navbar-brand brand-custom" href="My Accounts">My Account</a>
   <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link login-custom" href="#">Transfers</a>
+              <a class="nav-link login-custom" href="My Accounts">Transfers</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link register-custom" href="#">Transactions</a>
+              <a class="nav-link register-custom" href="My Accounts">Transactions</a>
           </li>
       </ul>
   </div>
 </nav>
+
+<button (click)="goToPage('myaccount')">
+  <span>Go to master Page</span>
+</button> --->

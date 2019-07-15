@@ -1,0 +1,17 @@
+<h1>Register</h1>
+
+<form [formGroup]="registerForm" (ngSubmit)="registerFormHandler()">
+
+   
+    <div id="returnMessage" [innerHTML]="returnMessage"></div>
+    <input type="text" formControlName="username" name="username" placeholder="username" />
+    <br />
+    <input type="password" formControlName="password" name="password" placeholder="password" />
+    <br />
+    <input type="text" formControlName="email" name="email" placeholder="email" />
+    <br />
+    <input type="text" formControlName="SSN_TIN" name="SSN_TIN" placeholder="SSN_TIN" />
+    <br />
+    <input type="submit" /><br />
+     
+  </form>

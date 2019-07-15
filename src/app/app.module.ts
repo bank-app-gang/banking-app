@@ -8,6 +8,7 @@ import { UserComponent } from './user/user.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import{AuthenticateService } from './authenticate.service'
 import { MyAccountComponent } from './my-account/my-account.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { MyAccountComponent } from './my-account/my-account.component';
     SignInFormComponent,
     UserComponent,
     MyAccountComponent,
+    RegistrationComponent,
    
   ],
   imports: [

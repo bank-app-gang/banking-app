@@ -58,12 +58,23 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
 //server returns a string stored in class variable returnMessage 
   logInFormHandler(e)
  {
-   
+
   var credentials={username: this.f.username.value, password:this.f.password.value}
-  this.authenticateService.verifyFullCredentials(credentials).subscribe() // sends to authenticate token 
+  this.authenticateService.verifyFullCredentials(credentials).subscribe( data =>
+    {
+      this.returnMessage=data.returnMessage;
+      if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login
+      {
+        console.log(localStorage.getItem('usertoken'));
+      }
+      
+    }); // sends to authenticate token 
+    /*
   if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login)
   {
+    
     this.returnMessage='Succesful Login';
+    console.log(localStorage.getItem('usertoken'));
     setTimeout((function()
     {
       var x=0;
@@ -75,6 +86,7 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
   {
     this.returnMessage='Invalid Credentials';
   }
+  */
   }
 
 

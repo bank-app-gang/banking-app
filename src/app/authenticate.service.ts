@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { map } from 'rxjs/operators';
+import { Profile } from 'selenium-webdriver/firefox';
+import { Observable } from 'rxjs';
 
 
 interface TokenResponse 
@@ -25,6 +27,10 @@ localStorage.setItem('usertoken', token)
 this.token = token
 }
 
+getToken()
+{
+  return this.token
+}
 //destroy user token
 
 
@@ -45,5 +51,11 @@ this.token = token
     )
     return request
   }
+
+
+userAccounts() :Observable <any>
+{
+return this.http.post('http://10.173.200.170:3000/axle/userAccounts',{headers: {Authorization: `${this.getToken()}`} })
 }
 
+}

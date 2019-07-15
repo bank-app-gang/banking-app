@@ -9,6 +9,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import{AuthenticateService } from './authenticate.service'
 import { MyAccountComponent } from './my-account/my-account.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -18,6 +19,7 @@ import { RegistrationComponent } from './registration/registration.component';
     UserComponent,
     MyAccountComponent,
     RegistrationComponent,
+    PageNotFoundComponent,
    
   ],
   imports: [

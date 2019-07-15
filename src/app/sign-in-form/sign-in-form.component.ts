@@ -5,6 +5,7 @@ import {AppComponent} from '../app.component';
 import {UserComponent} from '../user/user.component';
 import { HttpClient } from '@angular/common/http'
 import { AuthenticateService } from '../authenticate.service';
+import {Router} from '@angular/router'
 
 
 @Component({
@@ -29,7 +30,7 @@ signUpForm:FormGroup;
  showSignUp:boolean;
  returnMessage:any;
   
-constructor(private formBuilder: FormBuilder, private http: HttpClient, private authenticateService: AuthenticateService)
+constructor(private formBuilder: FormBuilder, private http: HttpClient, private authenticateService: AuthenticateService, private router:Router)
 {
 
 }
@@ -67,26 +68,10 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
       {
         console.log(localStorage.getItem('usertoken'));
       }
-      
-    }); // sends to authenticate token 
-    /*
-  if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login)
-  {
-    
-    this.returnMessage='Succesful Login';
-    console.log(localStorage.getItem('usertoken'));
-    setTimeout((function()
-    {
-      var x=0;
-    }
-    ),3000)
-    //place routing statement HERE!!!!
-  }
-  else
-  {
-    this.returnMessage='Invalid Credentials';
-  }
-  */
+      //send to my account page
+      this.router.navigate(['/accounts']);
+    }); 
+
   }
 
 

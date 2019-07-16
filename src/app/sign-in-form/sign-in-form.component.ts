@@ -68,8 +68,11 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
       {
         console.log(localStorage.getItem('usertoken'));
       }
+      console.log(
+        Math.floor(Math.random()*Math.pow(10,7)) 
+      );
       //send to my account page
-      this.router.navigate(['/accounts']);
+      //this.router.navigate(['/accounts']);
     }); 
 
   }

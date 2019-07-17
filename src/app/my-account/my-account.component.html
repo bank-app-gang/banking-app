@@ -1,19 +1,51 @@
-<h1>Hi</h1>
-<p>You're logged in to Axle Banking!!</p>
+
+
+<mat-sidenav-container fullscreen>
+        <mat-sidenav mode="side" opened>
+           
+            <a mat-raised-button routerLink=".">My Account</a>
+            <br>
+            <a mat-raised-button routerLink=".">Transfer</a>
+            <br>
+            <a mat-raised-button routerLink=".">Settings</a>
+            <br>
+            <a mat-raised-button routerLink=".">Contact Support</a>
+            <br>
+            <a mat-raised-button routerLink=".">Logout</a>
+      
+            
+        </mat-sidenav>
+        <mat-sidenav-content>
+
+
+                <h1>Hi</h1>
+                <p>You're logged in to Axle Banking!!</p>
+
+                <table *ngIf="AccountList" style="width:800px; margin:0 auto;">
+                        <tr>
+                            <td>Account Number</td>
+                            <td>Balance</td>
+                        </tr>
+                        
+                        <tr *ngFor= "let Account of AccountList">
+                            <td>{{Account.account_number}}</td>
+                            <td>{{Account.balance}}</td>
+                         
+                        </tr>
+                        
+                        
+                        
+                        </table>
+                        
 
 
 
-<a mat-raised-button routerLink=".">My Account</a>
 
-<a mat-raised-button routerLink=".">Transactions</a>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
 
-<a mat-raised-button routerLink=".">Transfer</a>
 
-<a mat-raised-button routerLink=".">Settings</a>
-
-<a mat-raised-button routerLink=".">Contact Support</a>
-<a mat-raised-button routerLink=".">Logout</a>
-<br /><br />
+<!-----
 <table *ngIf="AccountList" style="width:800px; margin:0 auto;">
 <tr>
     <td>Account Number</td>
@@ -29,10 +61,4 @@
 
 
 </table>
-<!--
-<div *ngFor= "let Account of AccountList">
-    <p><app-account *ngIf="AccountList" Account={{Account}}></app-account></p>
-    </div>
-
-    <p><app-account *ngIf="AccountList" Account={{AccountList}}></app-account></p>
-    -->
+---->

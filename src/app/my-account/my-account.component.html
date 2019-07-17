@@ -16,3 +16,5 @@
 <div *ngFor= "let Account of AccountList">
     <p><app-account *ngIf="AccountList" Account={{Account}}></app-account></p>
     </div>
+
+    <p><app-account *ngIf="AccountList" Account={{AccountList[0]}}></app-account></p>

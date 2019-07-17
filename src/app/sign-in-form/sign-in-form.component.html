@@ -1,7 +1,6 @@
 <h1>Login</h1>
 
-
- <form [formGroup]="logInForm" (ngSubmit)="logInFormHandler()" *ngIf="showLogIn">
+<form [formGroup]="logInForm" (ngSubmit)="logInFormHandler()" *ngIf="showLogIn">
 
    
     <div id="returnMessage" [innerHTML]="returnMessage"></div>
@@ -12,25 +11,13 @@
     <input matInput formControlName="password" type ="password"  placeholder="password" />
 </mat-form-field><br>
 
-<button mat-button color="warn">login</button><br />
-
-     Go to your accounts now - <a (click)="switchFormDisplay()">My accounts</a>
-  </form>
+<button mat-raised-button>login</button><br />
+</form>
 
 
  <router-outlet></router-outlet>
 
-<form [formGroup]="signUpForm" (ngSubmit)="signUpFormHandler()" *ngIf="showSignUp">
 
-    <h1>Your accounts</h1>
-    <button onclick="Transfer()">My Accounts</button>
-    <button onclick="Transfer()">Transactions</button>
-    <button onclick="Transfer()">Transfer</button>
-    <button onclick="Transfer()">Settings</button>
-    <button onclick="Transfer()">Contact Support</button>
-    <button onclick="">Contact Support</button>
-    Back to login! <a (click)="switchFormDisplay()">Log In</a>
-  </form>
 
 
 <!---- 

@@ -10,4 +10,6 @@
 <button onclick="Transfer()">Contact Support</button>
 <button onclick="">Contact Support</button>
 
-<p><app-account Account={{AccountList}}></app-account></p>
+<div *ngFor= "let Account of AccountList">
+<p><app-account *ngIf="AccountList" Account={{Account}}></app-account></p>
+</div>

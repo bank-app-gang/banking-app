@@ -11,9 +11,12 @@ export class AccountComponent implements OnInit {
 
   @Input() Account :any;
 
-  constructor() { }
+  constructor() { 
+    console.log(this.Account);
+  }
 
-  ngOnInit() {
+  ngOnInit()
+   {
     
   }
 

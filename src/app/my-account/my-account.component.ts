@@ -11,6 +11,8 @@ import {Router} from '@angular/router'
 
 export class MyAccountComponent implements OnInit {
 
+  AccountList :any
+
   constructor(private http: HttpClient, private authenticateService: AuthenticateService, private router:Router) { }
 
   ngOnInit()
@@ -19,9 +21,9 @@ export class MyAccountComponent implements OnInit {
     if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login
     {
      // console.log(localStorage.getItem('usertoken'));
-      
       this.authenticateService.getAccounts(localStorage.getItem('usertoken')).subscribe((data)=>{
         console.log(data);
+        this.AccountList=data;
       });
       
     }

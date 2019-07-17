@@ -66,8 +66,7 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
       this.returnMessage=data.returnMessage;
       if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login)
       {
-        console.log(localStorage.getItem('usertoken'));
-             //send to my account page
+      //send to my account page
       this.router.navigate(['/accounts']);
       }
 

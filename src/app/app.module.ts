@@ -10,6 +10,7 @@ import{AuthenticateService } from './authenticate.service'
 import { MyAccountComponent } from './my-account/my-account.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AccountComponent } from './account/account.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MyAccountComponent,
     RegistrationComponent,
     PageNotFoundComponent,
+    AccountComponent,
    
   ],
   imports: [

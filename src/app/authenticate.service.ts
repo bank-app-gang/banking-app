@@ -53,9 +53,9 @@ getToken()
   }
 
 
-userAccounts() :Observable <any>
+getAccounts(token :string)
 {
-return this.http.post('http://10.173.200.170:3000/axle/userAccounts',{headers: {Authorization: `${this.getToken()}`} })
+return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} })
 }
 
 }

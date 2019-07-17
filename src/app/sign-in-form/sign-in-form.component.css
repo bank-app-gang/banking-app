@@ -14,3 +14,11 @@ a
   text-underline-position:alphabetic;
   cursor:pointer;
 }
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.example-container > * {
+  width: 100%;
+}

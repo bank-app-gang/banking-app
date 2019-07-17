@@ -10,6 +10,11 @@ import{AuthenticateService } from './authenticate.service'
 import { MyAccountComponent } from './my-account/my-account.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatButtonModule} from '@angular/material/button';
 
 
 @NgModule({
@@ -20,14 +25,19 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     MyAccountComponent,
     RegistrationComponent,
     PageNotFoundComponent,
-   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule,
+    MatButtonModule,
   ],
   providers: [HttpClientModule,AuthenticateService],
   bootstrap: [AppComponent]

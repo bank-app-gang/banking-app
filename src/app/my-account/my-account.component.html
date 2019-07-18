@@ -14,25 +14,26 @@
 <a mat-raised-button routerLink=".">Contact Support</a>
 <a mat-raised-button routerLink=".">Logout</a>
 <br /><br />
+
 <table *ngIf="AccountList" style="width:800px; margin:0 auto;">
 <tr>
+    <td>Account Type</td>
     <td>Account Number</td>
     <td>Balance</td>
 </tr>
 
-<tr *ngFor= "let Account of AccountList">
-    <td>{{Account.account_number}}</td>
-    <td>{{Account.balance}}</td>
- 
+   <tr *ngFor= "let Account of AccountList">
+        <app-account *ngIf="AccountList" [Account]="Account"></app-account>
 </tr>
 
 
 
 </table>
-<!--
+
+<!-- 
 <div *ngFor= "let Account of AccountList">
-    <p><app-account *ngIf="AccountList" Account={{Account}}></app-account></p>
+    <p><app-account *ngIf="AccountList" [Account]="Account"></app-account></p>
     </div>
 
-    <p><app-account *ngIf="AccountList" Account={{AccountList}}></app-account></p>
-    -->
+   <p><app-account *ngIf="AccountList" [Account]="AccountList"></app-account></p>-->
+    

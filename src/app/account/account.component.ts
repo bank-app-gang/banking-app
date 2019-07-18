@@ -9,15 +9,34 @@ import {Router} from '@angular/router'
 })
 export class AccountComponent implements OnInit {
 
+  type :string// account type ( checking or saving or other)
   @Input() Account :any;
 
   constructor() { 
-    console.log(this.Account);
+    
   }
 
   ngOnInit()
    {
-    
+    if (this.Account)
+    {
+      //0 for checking and 1 for saving
+     var typeNum=this.Account.account_number[4];
+     switch (typeNum)
+     {
+      case "0":
+        this.type="Checking Account";
+        break;
+      case "1":
+        this.type="Saving Account";
+        break;
+      default:
+        this.type="Other";
+
+     }
+     
+     
+    }
   }
 
 }

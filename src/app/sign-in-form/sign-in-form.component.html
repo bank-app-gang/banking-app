@@ -3,7 +3,7 @@
 <form [formGroup]="logInForm" (ngSubmit)="logInFormHandler()" *ngIf="showLogIn">
 
    
-    <div id="returnMessage" [innerHTML]="returnMessage"></div>
+    <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
    <mat-form-field>
     <input matInput formControlName="username" name="username" placeholder="username" /></mat-form-field><br>
    <mat-form-field>

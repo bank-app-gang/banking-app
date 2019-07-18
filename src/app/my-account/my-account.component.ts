@@ -24,7 +24,6 @@ export class MyAccountComponent implements OnInit {
     {
      
       this.authenticateService.getAccounts(localStorage.getItem('usertoken')).subscribe( (data)=>{
-        console.log(data);
         
         this.AccountList=data;
         });

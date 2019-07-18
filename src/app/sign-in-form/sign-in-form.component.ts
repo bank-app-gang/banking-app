@@ -1,4 +1,4 @@
-import { Component, OnInit ,Input,Output,EventEmitter} from '@angular/core';
+import { Component, OnInit ,Input} from '@angular/core';
 import {FormBuilder,FormGroup,Validators} from '@angular/forms';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from '../app.component';
@@ -25,10 +25,9 @@ logInForm: FormGroup;
 signUpForm:FormGroup;
 
  @Input() userList: UserComponent[];
- @Output() addNewUser= new EventEmitter();
+ 
 
-  showLogIn:boolean;
- showSignUp:boolean;
+
  returnMessage:any;
   
 constructor(private formBuilder: FormBuilder, private http: HttpClient, private authenticateService: AuthenticateService, private router:Router)
@@ -52,7 +51,7 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
   
 // function called when user click login button, makes api call to the server,
 //server returns a string stored in class variable returnMessage 
-  logInFormHandler(e)
+  logInFormHandler()
  {
 
   var credentials={username: this.f.username.value, password:this.f.password.value}

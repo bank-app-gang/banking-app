@@ -58,4 +58,14 @@ getAccounts(token :string)
 return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} })
 }
 
+transfer( transfer :any)
+{
+  const base=this.http.post('http://10.173.200.170:3000/axle/getAccounts',transfer);
+  const request = base.pipe(
+    map( (data :any)=> {
+      return data
+    })
+  )
+  return request
+}
 }

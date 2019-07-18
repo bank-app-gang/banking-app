@@ -20,7 +20,27 @@
                 <h1>Hi</h1>
                 <p>You're logged in to Axle Banking!!</p>
 
-          
+             
+                <form [formGroup]="transferForm" (ngSubmit)="transferFormHandler()" >
+
+   
+                        <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
+                       <mat-form-field>
+                        <input matInput formControlName="sender_account_number" name="sender_account_number" placeholder="sender_account_number" /></mat-form-field><br>
+                       
+                        <mat-form-field>
+                        <input matInput formControlName="recipient_account_number" type ="recipient_account_number"  placeholder="recipient_account_number" /></mat-form-field><br>
+
+                        <mat-form-field>
+                        <input matInput formControlName="amount" type ="amount"  placeholder="amount" /></mat-form-field><br>
+
+                        <mat-form-field>
+                                <input matInput formControlName="note" type ="note"  placeholder="note" /></mat-form-field><br>
+                    
+                    
+                    <button mat-raised-button>Transfer</button><br />
+                    </form>
+
 
 
         </mat-sidenav-content>

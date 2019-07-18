@@ -17,6 +17,8 @@ import {MatInputModule} from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 
 @NgModule({
@@ -27,7 +29,8 @@ import {MatToolbarModule} from '@angular/material';
     MyAccountComponent,
     RegistrationComponent,
     PageNotFoundComponent,
-    AccountComponent
+    AccountComponent,
+ 
   ],
 
   imports: [
@@ -42,6 +45,8 @@ import {MatToolbarModule} from '@angular/material';
     MatSelectModule,
     MatButtonModule,
     MatToolbarModule,
+    MatSidenavModule
+
   ],
   providers: [HttpClientModule,AuthenticateService],
   bootstrap: [AppComponent]

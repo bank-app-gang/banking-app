@@ -1,39 +1,43 @@
-<h1>Hi</h1>
-<p>You're logged in to Axle Banking!!</p>
 
 
+<mat-sidenav-container fullscreen>
+        <mat-sidenav mode="side" opened>
+           
+            <a mat-raised-button routerLink=".">My Account</a>
+            <br>
+            <a mat-raised-button routerLink=".">Transfer</a>
+            <br>
+            <a mat-raised-button routerLink=".">Settings</a>
+            <br>
+            <a mat-raised-button routerLink=".">Contact Support</a>
+            <br>
+            <a mat-raised-button routerLink=".">Logout</a>
+      
+            
+        </mat-sidenav>
+        <mat-sidenav-content>
 
-<a mat-raised-button routerLink=".">My Account</a>
 
-<a mat-raised-button routerLink=".">Transactions</a>
+                <h1>Hi</h1>
+                <p>You're logged in to Axle Banking!!</p>
 
-<a mat-raised-button routerLink=".">Transfer</a>
-
-<a mat-raised-button routerLink=".">Settings</a>
-
-<a mat-raised-button routerLink=".">Contact Support</a>
-<a mat-raised-button routerLink=".">Logout</a>
-<br /><br />
-
+             
 <table *ngIf="AccountList" style="width:800px; margin:0 auto;">
-<tr>
-    <td>Account Type</td>
-    <td>Account Number</td>
-    <td>Balance</td>
-</tr>
+        <tr>
+            <td>Account Type</td>
+            <td>Account Number</td>
+            <td>Balance</td>
+        </tr>
+        
+           <tr *ngFor= "let Account of AccountList">
+                <app-account *ngIf="AccountList" [Account]="Account"></app-account>
+        </tr>
+        
+        
+        
+        </table>
 
-   <tr *ngFor= "let Account of AccountList">
-        <app-account *ngIf="AccountList" [Account]="Account"></app-account>
-</tr>
 
 
-
-</table>
-
-<!-- 
-<div *ngFor= "let Account of AccountList">
-    <p><app-account *ngIf="AccountList" [Account]="Account"></app-account></p>
-    </div>
-
-   <p><app-account *ngIf="AccountList" [Account]="AccountList"></app-account></p>-->
-    
+        </mat-sidenav-content>
+      </mat-sidenav-container>

@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { AuthenticateService } from '../authenticate.service';
 import {Router} from '@angular/router'
 import { map } from 'rxjs/operators'
+import { TransferComponent } from '../transfer/transfer.component';
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
@@ -28,10 +29,10 @@ export class MyAccountComponent implements OnInit {
         this.AccountList=data;
         });
       
-
+    
     
   }
 
-
+  
   }
 }

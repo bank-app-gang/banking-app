@@ -2,7 +2,7 @@
 <mat-sidenav-container fullscreen>
         <mat-sidenav mode="side" opened>
            
-            <a mat-raised-button routerLink=".">My Account</a>
+            <a mat-raised-button routerLink="/accounts">My Account</a>
             <br>
             <a mat-raised-button routerLink=".">Transfer</a>
             <br>
@@ -10,7 +10,7 @@
             <br>
             <a mat-raised-button routerLink=".">Contact Support</a>
             <br>
-            <a mat-raised-button routerLink=".">Logout</a>
+            <a mat-raised-button routerLink="/login">Logout</a>
       
             
         </mat-sidenav>
@@ -20,22 +20,7 @@
                 <h1>Hi</h1>
                 <p>You're logged in to Axle Banking!!</p>
 
-             
-<table *ngIf="AccountList" style="width:800px; margin:0 auto;">
-        <tr>
-            <td>Account Type</td>
-            <td>Account Number</td>
-            <td>Balance</td>
-        </tr>
-        
-           <tr *ngFor= "let Account of AccountList">
-                <app-account *ngIf="AccountList" [Account]="Account"></app-account>
-        </tr>
-        
-        
-        
-        </table>
-
+          
 
 
         </mat-sidenav-content>

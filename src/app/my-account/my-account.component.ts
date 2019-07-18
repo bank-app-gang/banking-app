@@ -1,5 +1,5 @@
 import { Component, OnInit ,Input} from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient } from '@angular/common/http';
 import { AuthenticateService } from '../authenticate.service';
 import {Router} from '@angular/router'
 import { map } from 'rxjs/operators'

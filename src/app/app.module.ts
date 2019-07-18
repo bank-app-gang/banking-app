@@ -18,6 +18,8 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatButtonModule} from '@angular/material/button';
 import {MatToolbarModule} from '@angular/material';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { TransferComponent } from './transfer/transfer.component';
+
 
 
 
@@ -30,6 +32,8 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     RegistrationComponent,
     PageNotFoundComponent,
     AccountComponent,
+       TransferComponent,
+   
  
   ],
 

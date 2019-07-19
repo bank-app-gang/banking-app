@@ -13,17 +13,38 @@ import { map } from 'rxjs/operators'
 export class TransferComponent implements OnInit {
 
   transferForm: FormGroup;
+  AccountList :any;
+  RecipientList :any;
   returnMessage:any;
+  
 
   ngOnInit()
   {
+    if(!localStorage.getItem('usertoken'))
+    {
+      this.router.navigate(['/login'])
+    }
   this.transferForm=this.formBuilder.group({
     sender_account_number:[''],
     recipient_account_number: [''],
     amount:[''],
     note:[''],
+    
   });
 
+  if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login
+  {
+  
+    this.authenticateService.getAccounts(localStorage.getItem('usertoken')).subscribe( (data)=>{
+      
+      this.AccountList=data;
+      });
+
+      this.authenticateService.getRecipients(localStorage.getItem('usertoken')).subscribe( (data)=>{
+      
+        this.RecipientList=data;
+        });
+  }
  this.returnMessage='';
   }
 
@@ -41,7 +62,9 @@ export class TransferComponent implements OnInit {
   
     var transfer={sender_account_number: this.f.sender_account_number.value, recipient_account_number: this.f.recipient_account_number.value,
       amount: this.f.amount.value, note:this.f.note.value };
-    this.authenticateService.transfer(transfer).subscribe( data =>
+      console.log(this.f);
+      
+    this.authenticateService.transfer(transfer,localStorage.getItem('usertoken')).subscribe( data =>
       {
         if(data.transferId)
         {

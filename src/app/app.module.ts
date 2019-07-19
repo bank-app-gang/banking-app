@@ -22,6 +22,8 @@ import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TransferComponent } from './transfer/transfer.component';
 import {MatExpansionModule} from '@angular/material/expansion';
+import { AddRecipientComponent } from './add-recipient/add-recipient.component';
+
 
 
 
@@ -35,6 +37,7 @@ import {MatExpansionModule} from '@angular/material/expansion';
     PageNotFoundComponent,
     AccountComponent,
     TransferComponent,
+    AddRecipientComponent,
    
  
   ],

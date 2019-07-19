@@ -57,12 +57,31 @@ getAccounts(token :string)
 {
 return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} })
 }
+getRecipients(token :string)
+{
+return this.http.get('http://10.173.200.170:3000/axle/getRecipients',{headers: {Authorization: token} })
+}
 
 transfer( transfer :any, token :any)
 {
   var httpHeader=  new HttpHeaders();
   httpHeader.append( 'Authorization', token);
   const base=this.http.post('http://10.173.200.170:3000/axle/transfer',transfer,{headers: {Authorization: token} });
+  const request = base.pipe(
+    map( (data :any)=> {
+      return data
+    })
+  )
+  return request
+}
+
+
+addRecipient(receiver :any, token :any)
+{
+  
+  var httpHeader=  new HttpHeaders();
+  httpHeader.append( 'Authorization', token);
+  const base=this.http.post('http://10.173.200.170:3000/axle/addRecipient ',receiver ,{headers: {Authorization: token} });
   const request = base.pipe(
     map( (data :any)=> {
       return data

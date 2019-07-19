@@ -22,7 +22,7 @@ export class SignInFormComponent implements OnInit
 {
 
 logInForm: FormGroup;
-signUpForm:FormGroup;
+
 
  @Input() userList: UserComponent[];
  

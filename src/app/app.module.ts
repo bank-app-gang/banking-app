@@ -21,6 +21,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TransferComponent } from './transfer/transfer.component';
+import { AddRecipientComponent } from './add-recipient/add-recipient.component';
 
 
 
@@ -35,6 +36,7 @@ import { TransferComponent } from './transfer/transfer.component';
     PageNotFoundComponent,
     AccountComponent,
     TransferComponent,
+    AddRecipientComponent,
    
  
   ],

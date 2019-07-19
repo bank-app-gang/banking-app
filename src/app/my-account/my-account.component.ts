@@ -20,7 +20,10 @@ export class MyAccountComponent implements OnInit {
 
   ngOnInit()
   {
-    
+    if(!localStorage.getItem('usertoken'))
+    {
+      this.router.navigate(['/login'])
+    }
     if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login
     {
      

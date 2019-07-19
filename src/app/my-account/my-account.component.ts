@@ -28,10 +28,7 @@ export class MyAccountComponent implements OnInit {
         
         this.AccountList=data;
         });
-      
-    
-    
-  }
+    }
 
   
   }

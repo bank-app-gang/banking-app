@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http'
+import { HttpClient,HttpHeaders} from '@angular/common/http'
 import { map } from 'rxjs/operators';
 import { Profile } from 'selenium-webdriver/firefox';
 import { Observable } from 'rxjs';
@@ -58,9 +58,11 @@ getAccounts(token :string)
 return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} })
 }
 
-transfer( transfer :any)
+transfer( transfer :any, token :any)
 {
-  const base=this.http.post('http://10.173.200.170:3000/axle/transfer',transfer);
+  var httpHeader=  new HttpHeaders();
+  httpHeader.append( 'Authorization', token);
+  const base=this.http.post('http://10.173.200.170:3000/axle/transfer',transfer,{headers: {Authorization: token} });
   const request = base.pipe(
     map( (data :any)=> {
       return data

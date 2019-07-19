@@ -39,8 +39,8 @@
 
                         <mat-form-field>
                                 <mat-label>Select a Recipient from recipient list</mat-label>
-                                <mat-select [(value)]="f" formControlName="recipient_account_number">
-                                    <mat-option *ngFor="let Recipient of RecipientList" value={{Recipient.recipient_account_numb}}>{{Recipient.recipient_alias}}</mat-option>
+                                <mat-select [(value)]="chosen" formControlName="recipient_account_number">
+                                    <mat-option *ngFor="let Recipient of RecipientList" value={{Recipient.recipient_account_num}}>{{Recipient.recipient_alias}}</mat-option>
         
                                 </mat-select>
                                 </mat-form-field>

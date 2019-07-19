@@ -63,7 +63,7 @@ export class TransferComponent implements OnInit {
     var transfer={sender_account_number: this.f.sender_account_number.value, recipient_account_number: this.f.recipient_account_number.value,
       amount: this.f.amount.value, note:this.f.note.value };
       console.log(this.f);
-      /*
+      
     this.authenticateService.transfer(transfer,localStorage.getItem('usertoken')).subscribe( data =>
       {
         if(data.transferId)
@@ -82,6 +82,6 @@ export class TransferComponent implements OnInit {
   
    
       }); 
-  */
+  
     }
 }

@@ -22,3 +22,14 @@ a
 .example-container > * {
   width: 100%;
 }
+
+.full-form-width {
+    min-width: 250px;
+    max-width: 500px;
+    width:100%;
+}
+
+.input-full-width {
+    width:300px;
+}
+

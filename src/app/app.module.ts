@@ -21,7 +21,7 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { TransferComponent } from './transfer/transfer.component';
-
+import {MatExpansionModule} from '@angular/material/expansion';
 
 
 
@@ -54,6 +54,7 @@ import { TransferComponent } from './transfer/transfer.component';
     MatSidenavModule,
     MatRadioModule,
     MatAutocompleteModule,
+    MatExpansionModule,
 
   ],
   providers: [HttpClientModule,AuthenticateService],

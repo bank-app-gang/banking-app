@@ -1,13 +1,14 @@
 <h1>Login</h1>
 
-<form [formGroup]="logInForm" (ngSubmit)="logInFormHandler()" >
+<form [formGroup]="logInForm" (ngSubmit)="logInFormHandler()" class="form-full-width" >
 
    
     <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
-   <mat-form-field>
-    <input matInput formControlName="username" name="username" placeholder="username" /></mat-form-field><br>
-   <mat-form-field>
-
+   <mat-form-field class="input-full-width">
+    <input matInput formControlName="username" name="username" placeholder="username" />
+    </mat-form-field><br>
+    
+   <mat-form-field class="input-full-width">
     <input matInput formControlName="password" type ="password"  placeholder="password" />
 </mat-form-field><br>
 

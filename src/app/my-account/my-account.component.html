@@ -1,19 +1,30 @@
 
 
 <mat-sidenav-container fullscreen>
+    
         <mat-sidenav mode="side" opened>
            
-            <a mat-raised-button routerLink="/accounts">My Account</a>
-            <br>
-            <a mat-raised-button routerLink='/transfer'>Transfer</a>
-            <br>
-            <a mat-raised-button routerLink=".">Settings</a>
-            <br>
-            <a mat-raised-button routerLink=".">Contact Support</a>
-            <br>
-            <a mat-raised-button routerLink="/login">Logout</a>
-      
-            
+           <mat-accordion>
+                    <mat-expansion-panel>
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>
+                         Menu Options
+                        </mat-panel-title>
+                      </mat-expansion-panel-header>
+                  
+                        <a mat-raised-button routerLink="/accounts">My Account</a>
+                        <br>
+                        <a mat-raised-button routerLink='/transfer'>Transfer</a>
+                        <br>
+                        <a mat-raised-button routerLink=".">Settings</a>
+                        <br>
+                         <a mat-raised-button routerLink=".">Contact Support</a>
+                        <br>
+                        <a mat-raised-button routerLink="/login">Logout</a>
+
+                    </mat-expansion-panel>
+                </mat-accordion>
+
         </mat-sidenav>
         <mat-sidenav-content>
 
@@ -21,8 +32,10 @@
                 <h1>Hi</h1>
                 <p>You're logged in to Axle Banking!!</p>
 
+
+
   <div *ngIf="AccountList">         
-<table  style="width:800px; margin:0 auto; border: 1px solid #000;">
+<table  style="width:700px; margin:0 auto; border: 1px solid #000;">
         <tr>
             <td>Account Type</td>
             <td>Account Number</td>
@@ -31,8 +44,7 @@
 
 
         <tr *ngFor= "let Account of AccountList" style="width:800px; margin:0 auto; border: 1px solid #000;" >        
-           
-                <app-account *ngIf="AccountList" [Account]="Account"></app-account>
+           <app-account *ngIf="AccountList" [Account]="Account"></app-account>
         </tr>
            
         

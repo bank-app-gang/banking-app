@@ -2,18 +2,29 @@
 <mat-sidenav-container fullscreen>
         <mat-sidenav mode="side" opened>
            
-            <a mat-raised-button routerLink="/accounts">My Account</a>
-            <br>
-            <a mat-raised-button routerLink=".">Transfer</a>
-            <br>
-            <a mat-raised-button routerLink=".">Settings</a>
-            <br>
-            <a mat-raised-button routerLink=".">Contact Support</a>
-            <br>
-            <a mat-raised-button routerLink="/login">Logout</a>
-      
-            
-        </mat-sidenav>
+          
+                <mat-accordion>
+                        <mat-expansion-panel>
+                          <mat-expansion-panel-header>
+                            <mat-panel-title>
+                             Menu Options
+                            </mat-panel-title>
+                          </mat-expansion-panel-header>
+                      
+                            <a mat-raised-button routerLink="/accounts">My Account</a>
+                            <br>
+                            <a mat-raised-button routerLink='/transfer'>Transfer</a>
+                            <br>
+                            <a mat-raised-button routerLink=".">Settings</a>
+                            <br>
+                             <a mat-raised-button routerLink=".">Contact Support</a>
+                            <br>
+                            <a mat-raised-button routerLink="/login">Logout</a>
+    
+                        </mat-expansion-panel>
+                    </mat-accordion>
+    
+            </mat-sidenav>
         <mat-sidenav-content>
 
 
@@ -27,7 +38,7 @@
                         <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
                       
                         
-                        <mat-form-field>
+                        <mat-form-field class="input-full-width">
                         <mat-label>Select an Account</mat-label>
                         <mat-select [(value)]="selected">
                              <mat-option>None</mat-option>
@@ -42,13 +53,13 @@
 
                         <br>
                        
-                        <mat-form-field>
+                        <mat-form-field class="input-full-width">
                         <input matInput formControlName="recipient_account_number" type ="recipient_account_number"  placeholder="Recipients Account Number" /></mat-form-field><br>
 
-                        <mat-form-field>
+                        <mat-form-field class="input-full-width">
                         <input matInput formControlName="amount" type ="amount"  placeholder="Amount" /></mat-form-field><br>
 
-                        <mat-form-field>
+                        <mat-form-field class="input-full-width">
                         <input matInput formControlName="note" type ="note"  placeholder="Description" /></mat-form-field><br>
                     
                     

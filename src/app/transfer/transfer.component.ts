@@ -36,7 +36,7 @@ export class TransferComponent implements OnInit {
   
   // function called when user click login button, makes api call to the server,
   //server returns a string stored in class variable returnMessage 
-    TransferFormHandler(e)
+    transferFormHandler(e)
    {
   
     var transfer={sender_account_number: this.f.sender_account_number.value, recipient_account_number: this.f.recipient_account_number.value,
@@ -50,6 +50,7 @@ export class TransferComponent implements OnInit {
         else if (data.returnMessage)
         {
           console.log(data.returnMessage);
+          this.returnMessage=data.returnMessage;
         }
         else
         {

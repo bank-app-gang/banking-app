@@ -60,7 +60,7 @@ return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Au
 
 transfer( transfer :any)
 {
-  const base=this.http.post('http://10.173.200.170:3000/axle/getAccounts',transfer);
+  const base=this.http.post('http://10.173.200.170:3000/axle/transfer',transfer);
   const request = base.pipe(
     map( (data :any)=> {
       return data

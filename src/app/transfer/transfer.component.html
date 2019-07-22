@@ -42,15 +42,17 @@
                         <mat-label>Select an Account</mat-label>
                         <mat-select [(value)]="selected" formControlName="sender_account_number">
                             <mat-option *ngFor="let Account of AccountList" value={{Account.account_number}}>{{Account.account_number}}: ${{Account.balance}}</mat-option>
-                        </mat-select>
+                         </mat-select>
                         </mat-form-field>
                         <br>
                        
-                    
-                        <mat-form-field class="input-full-width">
+
+
+                        <mat-form-field>
                                 <mat-label>Select a Recipient from recipient list</mat-label>
                                 <mat-select [(value)]="chosen" formControlName="recipient_account_number">
                                     <mat-option *ngFor="let Recipient of RecipientList" value={{Recipient.recipient_account_num}}>{{Recipient.recipient_alias}}</mat-option>
+                                    <mat-option (click)="this.router.navigate(['/addRecipient']);" value="Add Recipient"> Add Recipient</mat-option>
                                 </mat-select>
                             
                                 </mat-form-field>

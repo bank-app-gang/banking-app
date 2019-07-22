@@ -16,7 +16,7 @@ import {Router} from '@angular/router'
 export class AddRecipientComponent implements OnInit {
 
   addRecipientForm: FormGroup;
-
+  displayAccountNum: boolean;
 
  @Input() userList: UserComponent[];
  
@@ -37,8 +37,10 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
     }
   this.addRecipientForm=this.formBuilder.group({
     recipient_account_number:[''],
+    email:[''],
     alias: ['']
   });
+  this.displayAccountNum=false;
 
  this.returnMessage='';
   }
@@ -54,7 +56,7 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
 
   if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login)
   {
-    var receiver={recipient_account_number: this.f.recipient_account_number.value, alias:this.f.alias.value}
+    var receiver={recipient_account_number: this.f.recipient_account_number.value, alias:this.f.alias.value,email:this.f.email.value};
   this.authenticateService.addRecipient(receiver,localStorage.getItem('usertoken')).subscribe( data =>
     {
      
@@ -65,6 +67,18 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
   //this.router.navigate(['/transfer']);
   }
   
+  }
+
+  changeRecipientFinder()
+  {
+    if (this.displayAccountNum)
+    {
+      this.displayAccountNum=false;
+    }
+    else
+  {
+    this.displayAccountNum=true;
+  }
   }
 
 }

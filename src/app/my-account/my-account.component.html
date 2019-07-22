@@ -41,16 +41,16 @@
             <td>Account Number</td>
             <td>Balance</td>
         </tr>
+      </table>
 
-
-        <tr *ngFor= "let Account of AccountList" style="width:500px; margin:-6 auto; border: 1px solid #000;" >        
+        <div *ngFor= "let Account of AccountList" style="width:800px; margin:0 auto;margin-top:1%; border-collapse: collapse;" >        
            <app-account *ngIf="AccountList" [Account]="Account"></app-account>
-        </tr>
+        </div>
            
         
         
         
-        </table>
+        
     </div>  
 
 

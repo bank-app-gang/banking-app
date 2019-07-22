@@ -11,17 +11,17 @@
                          Menu Options
                         </mat-panel-title>
                       </mat-expansion-panel-header>
-                  
-                        <a mat-raised-button routerLink="/accounts">My Account</a>
+                        <div class="button-row-a">
+                        <a mat-raised-button routerLink="/accounts" style="width : 100%">My Account</a>
                         <br>
-                        <a mat-raised-button routerLink='/transfer'>Transfer</a>
+                        <a mat-raised-button routerLink='/transfer' style="width : 100%">Transfer</a>
                         <br>
-                        <a mat-raised-button routerLink=".">Settings</a>
+                        <a mat-raised-button routerLink="." style="width : 100%">Settings</a>
                         <br>
-                         <a mat-raised-button routerLink=".">Contact Support</a>
+                         <a mat-raised-button routerLink="." style="width : 100%">Contact Support</a>
                         <br>
-                        <a mat-raised-button routerLink="/login">Logout</a>
-
+                        <a mat-raised-button routerLink="/login" style="width : 100%">Logout</a>
+                        </div>
                     </mat-expansion-panel>
                 </mat-accordion>
 
@@ -35,7 +35,7 @@
 
 
   <div *ngIf="AccountList">         
-<table  style="width:700px; margin:0 auto; border: 1px solid #000;">
+<table  style="width:500px; margin:0 auto; border: 1px solid #000;">
         <tr>
             <td>Account Type</td>
             <td>Account Number</td>
@@ -43,7 +43,7 @@
         </tr>
 
 
-        <tr *ngFor= "let Account of AccountList" style="width:800px; margin:0 auto; border: 1px solid #000;" >        
+        <tr *ngFor= "let Account of AccountList" style="width:500px; margin:-6 auto; border: 1px solid #000;" >        
            <app-account *ngIf="AccountList" [Account]="Account"></app-account>
         </tr>
            

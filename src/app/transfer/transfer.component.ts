@@ -79,7 +79,7 @@ export class TransferComponent implements OnInit {
         {
           console.log(data);
         }
-  
+        this.router.navigate(['/transferComplete']);
    
       }); 
   

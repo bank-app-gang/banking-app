@@ -33,7 +33,8 @@ constructor(private formBuilder: FormBuilder, private http: HttpClient, private 
   {
     if(!localStorage.getItem('usertoken'))
     {
-      this.router.navigate(['/login'])
+      console.log('routing back');
+      this.router.navigate(['/login']);
     }
   this.addRecipientForm=this.formBuilder.group({
     recipient_account_number:[''],

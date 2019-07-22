@@ -1,3 +1,4 @@
+<div class="container">
 <mat-sidenav-container fullscreen>
         <mat-sidenav mode="side" opened>
            
@@ -21,9 +22,9 @@
                 
                    
                     <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
-                    <div *ngIf="displayAccountNum">
+                    <div *ngIf="displayAccountNum" class="container">
 
-                   <mat-form-field >
+                   <mat-form-field class="input-full-width" >
                     <input matInput formControlName="recipient_account_number" name="recipient_account_number" placeholder="Recipient Account Number" /> </mat-form-field><br>
                    
                     Don't have an account number? <a type="button"  (click)="changeRecipientFinder()"  style="text-decoration: underline;">Add Recipient By Email</a>
@@ -48,3 +49,6 @@
                 
                 
                  <router-outlet></router-outlet>
+               </mat-sidenav-content>
+               </mat-sidenav-container>
+               </div>

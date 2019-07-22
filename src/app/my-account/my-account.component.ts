@@ -22,7 +22,7 @@ export class MyAccountComponent implements OnInit {
   {
     if(!localStorage.getItem('usertoken'))
     {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/login']);
     }
     if(localStorage.getItem('usertoken')) // check if token was created (meaning succesful login
     {

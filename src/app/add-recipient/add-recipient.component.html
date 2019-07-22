@@ -21,11 +21,26 @@
                 
                    
                     <div id="returnMessage" [innerHTML]="returnMessage" style="border: 1px red;"></div>
-                   <mat-form-field>
-                    <input matInput formControlName="recipient_account_number" name="recipient_account_number" placeholder="Recipient Account Number" /></mat-form-field><br>
-                   <mat-form-field>
-                
-                    <input matInput formControlName="alias" type ="alias"  placeholder="Recipient Alias " />
+                    <div *ngIf="displayAccountNum">
+
+                   <mat-form-field >
+                    <input matInput formControlName="recipient_account_number" name="recipient_account_number" placeholder="Recipient Account Number" /> </mat-form-field><br>
+                   
+                    Don't have an account number? <a type="button"  (click)="changeRecipientFinder()">Add Recipient By Email</a>
+                        
+                    </div>
+
+                    <div *ngIf="!(displayAccountNum)">
+                        <mat-form-field>
+                                <input matInput formControlName="email" name="email" placeholder="email" /></mat-form-field><br>
+                               
+                                Don't have an email? <a type="button" (click)="changeRecipientFinder()">Add Recipient By Account Number</a>
+                                        
+                            </div>
+
+                            
+                <mat-form-field>
+                 <input matInput formControlName="alias" type ="alias"  placeholder="Recipient Alias " />
                 </mat-form-field><br>
                 
                 <button mat-raised-button>Add Recipient</button><br />

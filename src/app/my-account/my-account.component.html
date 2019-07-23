@@ -1,5 +1,5 @@
 
-
+<!---Begining of navbar, each button is routed to a seprate page-->
 <mat-sidenav-container fullscreen>
     
         <mat-sidenav mode="side" opened>
@@ -33,8 +33,8 @@
                 <p>You're logged in to Axle Banking!!</p>
 
 
-
-  <div *ngIf="AccountList">         
+<!---the account list is displayed in a grid like pattern each column receives the correct data from the backend -->
+<div *ngIf="AccountList">         
 <table  style="width: 55%; margin:0 auto; border: 1px solid #000; font-size:1.5vw;">
         <tr>
             <td>Account Type</td>

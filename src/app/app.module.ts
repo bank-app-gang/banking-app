@@ -27,6 +27,7 @@ import { AddRecipientComponent } from './add-recipient/add-recipient.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { AddRecipientComponent } from './add-recipient/add-recipient.component';
     AccountComponent,
     TransferComponent,
     AddRecipientComponent,
+    
    
  
   ],

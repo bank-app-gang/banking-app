@@ -7,23 +7,36 @@
 
 
         <mat-sidenav-content>
-          <div class="container">
-  <div *ngIf="AccountList">         
-<table class="accountTable" style=" background-color:rgb(233,167,119);">
-        <tr>
-            <td>Account Type</td>
-            <td>Account Number</td>
-            <td>Balance</td>
-        </tr>
-      </table>
 
-        <div *ngFor= "let Account of AccountList"  >        
-           <app-account *ngIf="AccountList" [Account]="Account"></app-account>
-        </div>
-                 
-    </div>  
-
-  </div>
+            <div class="outer">
+                <div class="middle">
+                  <div class="inner">
+                    <div class="container">
+        
+        
+                        
+                            <div *ngIf="AccountList">         
+                          <table class="accountTable" style=" background-color:rgb(233,167,119);">
+                                  <tr>
+                                      <td>Account Type</td>
+                                      <td>Account Number</td>
+                                      <td>Balance</td>
+                                  </tr>
+                                </table>
+                          
+                                  <div *ngFor= "let Account of AccountList"  >        
+                                     <app-account *ngIf="AccountList" [Account]="Account"></app-account>
+                                  </div>
+                                           
+                              </div>  
+                          
+                            </div>
+        
+                      </div>
+                    </div>
+                  </div>
+                
+        
         </mat-sidenav-content>
       </mat-sidenav-container>
     

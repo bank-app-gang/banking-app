@@ -6,7 +6,7 @@
 
 .accountTable
 {
-  width: 75%; 
+  width: 100%; 
   margin:0 auto;
    border-bottom: 1px solid #000; 
    font-size:2vw;
@@ -16,6 +16,29 @@
 {
   border: 1px solid black;
   border-radius:4px;
-  padding-right:5%;
-  padding-left:5%;
+  padding:1%;
+  width:75%;
+  margin: 0 auto;
+  background-color:rgb(186,213,171);
+}
+
+.outer {
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 20%;
+  width: 100%;
+}
+
+.middle {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.inner {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  /*whatever width you want*/
 }

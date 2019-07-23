@@ -4,3 +4,18 @@
   width:10%;
 }
 
+.accountTable
+{
+  width: 75%; 
+  margin:0 auto;
+   border-bottom: 1px solid #000; 
+   font-size:2vw;
+}
+
+.container
+{
+  border: 1px solid black;
+  border-radius:4px;
+  padding-right:5%;
+  padding-left:5%;
+}

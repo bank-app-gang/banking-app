@@ -1,22 +1,15 @@
 
 
-<mat-sidenav-container fullscreen>
-    
+<mat-sidenav-container fullscreen>    
         <mat-sidenav mode="side" opened>
-           
            <app-navbar></app-navbar>
-
         </mat-sidenav>
+
+
         <mat-sidenav-content>
-
-
-                <h1>Hi</h1>
-                <p>You're logged in to Axle Banking!!</p>
-
-
-
+          <div class="container">
   <div *ngIf="AccountList">         
-<table  style="width: 55%; margin:0 auto; border: 1px solid #000; font-size:1.5vw;">
+<table class="accountTable" style=" background-color:rgb(233,167,119);">
         <tr>
             <td>Account Type</td>
             <td>Account Number</td>
@@ -27,13 +20,10 @@
         <div *ngFor= "let Account of AccountList"  >        
            <app-account *ngIf="AccountList" [Account]="Account"></app-account>
         </div>
-           
-        
-        
-        
-        
+                 
     </div>  
 
-
+  </div>
         </mat-sidenav-content>
       </mat-sidenav-container>
+    

@@ -43,6 +43,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AddRecipientComponent,
     TransferCompleteComponent,
     NavbarComponent,
+  
    
  
   ],

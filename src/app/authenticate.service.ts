@@ -89,4 +89,16 @@ addRecipient(receiver :any, token :any)
   )
   return request
 }
+
+freezeAccounts(token :any)
+{
+
+  const base=this.http.get('http://10.173.200.170:3000/axle/freezeAccounts',{headers: {Authorization: token} });
+  const request = base.pipe(
+    map( (data :any)=> {
+      return data
+    })
+  )
+  return request
+}
 }

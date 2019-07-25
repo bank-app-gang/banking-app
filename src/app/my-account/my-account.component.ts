@@ -13,10 +13,10 @@ import { TransferComponent } from '../transfer/transfer.component';
 
 export class MyAccountComponent implements OnInit {
 
-  AccountList :any;
-  SavingAccounts :any;
-  CheckingAccounts :any;
-
+  AccountList ?:any;
+  SavingAccounts ?:any;
+  CheckingAccounts ?:any;
+  returnMessage ?:any;
   constructor(private http: HttpClient, private authenticateService: AuthenticateService, private router:Router) { }
 
   ngOnInit()
@@ -27,15 +27,21 @@ export class MyAccountComponent implements OnInit {
       this.authenticateService.getAccounts(localStorage.getItem('usertoken')).subscribe( (data)=>{
         
         this.AccountList=data;
-        this.SavingAccounts=this.AccountList.map((account)=>{
+        this.SavingAccounts=this.AccountList.filter((account)=>{
           
           if (account.account_type=="Saving")
           {
-
-            return account;
+             return account;
           }          
         });
-        console.log(this.SavingAccounts);
+        this.CheckingAccounts=this.AccountList.filter((account)=>{
+          
+          if (account.account_type=="Checking")
+          {
+             return account;
+          }          
+        });
+        console.log(this.CheckingAccounts);
         });
         
     }
@@ -45,5 +51,13 @@ export class MyAccountComponent implements OnInit {
     }
 
   
+  }
+
+  freezeAccounts()
+  {
+    this.authenticateService.freezeAccounts(localStorage.getItem('usertoken')).subscribe((data)=> 
+    {
+      this.returnMessage=data.returnMessage;
+    })
   }
 }

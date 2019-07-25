@@ -14,8 +14,11 @@
                     <div class="container">
         
         
-                        
-                            <div *ngIf="AccountList">         
+                        <div *ngIf="AccountList==[]">
+                          <p> No account available!</p>
+                        </div>
+                            <div *ngIf="CheckingAccounts">      
+                                <h2>Checking</h2>   
                           <table class="accountTable" style=" background-color:rgb(233,167,119);">
                                   <tr>
                                       <td style="width:25%; text-align: center;">Account Type</td>
@@ -24,19 +27,39 @@
                                   </tr>
                                 </table>
                           
-                                  <div *ngFor= "let Account of AccountList"  >        
-                                   <app-account *ngIf="AccountList" [Account]="Account"></app-account>
+                                  <div *ngFor= "let Account of CheckingAccounts"  >        
+                                   <app-account *ngIf="CheckingAccounts" [Account]="Account"></app-account>
                                   </div>
                                            
                               </div>  
-                          
+
+                              
+                              <div *ngIf="SavingAccounts">
+                                  
+                                  <h2>Saving</h2>      
+                                  <table class="accountTable" style=" background-color:rgb(233,167,119);">
+                                          <tr>
+                                              <td style="width:25%; text-align: center;">Account Type</td>
+                                              <td style="width:50%; text-align: center;">Account Number</td>
+                                              <td style="width:25%; text-align: right;">Balance</td>
+                                          </tr>
+                                        </table>
+                                  
+                                          <div *ngFor= "let Account of SavingAccounts"  >        
+                                           <app-account *ngIf="SavingAccounts" [Account]="Account"></app-account>
+                                          </div>
+                                                   
+                                      </div> 
+                                      <br />
+                                      <div id="returnMessage" *ngIf="returnMessage" [innerHTML]="returnMessage" class="returnMessage" ></div>
+                                      <br />
+                                      <a mat-raised-button (click)="freezeAccounts()">Freeze Accounts </a>
                             </div>
-        
-                      </div>
+                       </div>
                     </div>
                   </div>
                 
-        
+                  
         </mat-sidenav-content>
       </mat-sidenav-container>
     

@@ -2,7 +2,7 @@
         <div class="middle">
           <div class="inner">
             <div class="container">
-<!--
+
                     <div id="returnMessage" *ngIf="returnMessage" [innerHTML]="returnMessage" class="returnMessage" ></div>
                     <br />
 
@@ -14,18 +14,16 @@
 <br />
 <h3>Recipient account number: {{Transfer.recipient_account_number}}</h3>
 <br />
-<h3>Transfer Amount: {{Transfer.amount}}</h3>
+<h3>Transfer Amount: ${{Transfer.amount}}</h3>
 <br />
-<h3>Transfer Note</h3><br />
+<h3>Transfer Note</h3>
 <p>{{Transfer.note}}</p>
 <a mat-raised-button routerLink="/accounts" style="font-size:1.3vw; ">DONE</a>
--->
-
-<h1>TRANSFER COMPLETE</h1>
-<br />
-<a mat-raised-button routerLink="/accounts" style="font-size:1.3vw; ">DONE</a>
-
 </div>
+
+
+
+
 </div>
 </div>
 </div>

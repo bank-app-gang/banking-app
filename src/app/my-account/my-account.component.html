@@ -98,7 +98,7 @@
                                                     <tr class="rowTable"(click)="getTransactionDetails(Transfer)">
                                                 <td style="width:25%; text-align: center;">{{Transfer.sender_account_num}}</td>
                                                 <td style="width:25%; text-align: center;">{{Transfer.recipient_account_num}}</td>
-                                                <td style="width:25%; text-align: right;">${{Transfer.amount}}</td>
+                                                <td style="width:25%; text-align: right;">{{Transfer.sender_account_num==TransferAccount.account_number? ("-$"+Transfer.amount):("+$"+Transfer.amount)}}</td>
                                                 <td style="width:25%; text-align: center;">{{Transfer.note.substring(0,10)}}...</td>
                                                 </tr>
                                                 </table>

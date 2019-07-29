@@ -1,7 +1,7 @@
 import { Component, OnInit ,Input} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticateService } from '../authenticate.service';
-import {Router} from '@angular/router'
+import {Router,NavigationExtras} from '@angular/router'
 import { map } from 'rxjs/operators'
 import { TransferComponent } from '../transfer/transfer.component';
 
@@ -73,12 +73,16 @@ export class MyAccountComponent implements OnInit {
       
       this.Transfers=data.Transfers;
       this.TransferAccount=data.TransferAccount;
-      console.log(data);
+      
     })
   }
   getTransactionDetails(transfer)
   {
-    var x=0
-    return
+    var navigationExtras: NavigationExtras = {
+      queryParams: {
+          "TransferId":JSON.stringify(transfer.transfer_id)
+      }
+  };
+   this.router.navigate(['/transferComplete'],navigationExtras);
   }
 }

@@ -38,8 +38,8 @@ export class TransferCompleteComponent implements OnInit {
 
   if (this.TransferInput)
   {
-    this.Transfer=this.TransferInput;
-    console.log(this.Transfer);
+    this.Transfer=JSON.parse(this.TransferInput);
+    
     
   }
   else if (this.TransferId)
@@ -49,7 +49,8 @@ export class TransferCompleteComponent implements OnInit {
   {
     if (data.transfer)
     {
-      this.Transfer=data.transfer;
+
+      this.Transfer={sender_account_number:data.transfer.sender_account_num,recipient_account_number:data.transfer.recipient_account_num,amount:data.transfer.amount,note:data.transfer.note};
     }
     else
     {
@@ -73,7 +74,7 @@ this.returnMessage="Error displaying Transaction";
       if (this.TransferInput)
       {
         this.Transfer=this.TransferInput;
-        console.log(this.Transfer);
+        console.log(this.Transfer.amount);
         
       }
       else if (this.TransferId)

@@ -76,4 +76,9 @@ export class MyAccountComponent implements OnInit {
       console.log(data);
     })
   }
+  getTransactionDetails(transfer)
+  {
+    var x=0
+    return
+  }
 }

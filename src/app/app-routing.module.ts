@@ -9,6 +9,8 @@ import {AddRecipientComponent} from './add-recipient/add-recipient.component';
 import {TransferCompleteComponent} from './transfer-complete/transfer-complete.component';
 import {SupportComponent} from './support/support.component';
 import {SettingsComponent} from './settings/settings.component'
+
+
 const routes: Routes = [
   {path: '',redirectTo: '/login',pathMatch: 'full'},
   {path: 'register',component: RegistrationComponent },
@@ -20,6 +22,7 @@ const routes: Routes = [
   {path: 'transferComplete',component:TransferCompleteComponent},
   {path: 'support',component:SupportComponent},
   {path: 'settings',component:SettingsComponent},
+
   {path:'**', component: PageNotFoundComponent},
 
 ];

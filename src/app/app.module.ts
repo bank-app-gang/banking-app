@@ -32,6 +32,7 @@ import { SettingsComponent } from './settings/settings.component';
 
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,6 +48,7 @@ import { SettingsComponent } from './settings/settings.component';
     NavbarComponent,
     SupportComponent,
     SettingsComponent,
+    
   
    
  

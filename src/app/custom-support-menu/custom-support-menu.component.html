@@ -77,13 +77,13 @@ Email: {{User.email}} <br />
               <br />
 
               <br />
-              <a mat-raised-button class="actionButton" (click)="UnFreezeAccounts()">UnFreeze Accounts </a> 
+              <a mat-raised-button class="actionButton" (click)="UnFreezeAccounts()" style="background-color:rgb(233,167,119);width:35%;font-size:2.0vw;">UnFreeze Accounts </a> 
              
-             <a mat-raised-button class="actionButton" (click)="freezeAccounts()">Freeze Accounts </a>
+             <a mat-raised-button class="actionButton" (click)="freezeAccounts()" style="background-color:rgb(233,167,119);width:35%;font-size:2.0vw;">Freeze Accounts </a>
              
-             <a mat-raised-button class="actionButton" (click)="createAccount(1)">Create Checking Account </a>
+             <a mat-raised-button class="actionButton" (click)="createAccount(1)" style="background-color:rgb(233,167,119);width:35%;font-size:2.0vw;">Create Checking Account </a>
              
-             <a mat-raised-button class="actionButton" (click)="createAccount(0)">Create Saving Account </a>
+             <a mat-raised-button class="actionButton" (click)="createAccount(0)" style="background-color:rgb(233,167,119);width:35%;font-size:2.0vw;">Create Saving Account </a>
 
              <form [formGroup]="deleteAccountForm" style="width: 100%;"(ngSubmit)="deleteAccountFormHandler()">
              <h2>Delete Account</h2>
@@ -94,7 +94,7 @@ Email: {{User.email}} <br />
                      </mat-select>
                     </mat-form-field>  
                     <br />
-                    <button mat-raised-button  style="background-color:rgb(233,167,119);width:12%;font-size:1.0vw;">Delete Account</button> 
+                    <button mat-raised-button  style="background-color:rgb(233,167,119);width:25%;font-size:2.0vw;">Delete Account</button> 
                 </form>
 </div>
 </div>

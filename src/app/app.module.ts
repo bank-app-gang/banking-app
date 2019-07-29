@@ -28,7 +28,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { SupportComponent } from './support/support.component';
 import { SettingsComponent } from './settings/settings.component';
 import { CustomSupportMenuComponent } from './custom-support-menu/custom-support-menu.component';
-import { CustomSupportNavbarComponent } from './custom-support-navbar/custom-support-navbar.component';
+//import { CustomSupportNavbarComponent } from './custom-support-navbar/custom-support-navbar.component';
 
 
 
@@ -51,7 +51,7 @@ import { CustomSupportNavbarComponent } from './custom-support-navbar/custom-sup
     SupportComponent,
     SettingsComponent,
     CustomSupportMenuComponent,
-    CustomSupportNavbarComponent,
+    //CustomSupportNavbarComponent,
   
    
  

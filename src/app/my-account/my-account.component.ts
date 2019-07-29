@@ -4,6 +4,7 @@ import { AuthenticateService } from '../authenticate.service';
 import {Router} from '@angular/router'
 import { map } from 'rxjs/operators'
 import { TransferComponent } from '../transfer/transfer.component';
+
 @Component({
   selector: 'app-my-account',
   templateUrl: './my-account.component.html',
@@ -17,6 +18,9 @@ export class MyAccountComponent implements OnInit {
   SavingAccounts ?:any;
   CheckingAccounts ?:any;
   returnMessage ?:any;
+  Transfers ?:any;
+  TransferAccount ?:any;
+
   constructor(private http: HttpClient, private authenticateService: AuthenticateService, private router:Router) { }
 
   ngOnInit()
@@ -41,7 +45,7 @@ export class MyAccountComponent implements OnInit {
              return account;
           }          
         });
-        console.log(this.CheckingAccounts);
+
         });
         
     }
@@ -58,6 +62,18 @@ export class MyAccountComponent implements OnInit {
     this.authenticateService.freezeAccounts(localStorage.getItem('usertoken')).subscribe((data)=> 
     {
       this.returnMessage=data.returnMessage;
+    })
+  }
+
+  getTransfers(account)
+  {
+    account={account_number:account.account_number,balance:account.balance};
+    this.authenticateService.getTransfers(account,localStorage.getItem('usertoken')).subscribe((data)=> 
+    {
+      
+      this.Transfers=data.Transfers;
+      this.TransferAccount=data.TransferAccount;
+      console.log(data);
     })
   }
 }

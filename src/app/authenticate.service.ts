@@ -55,11 +55,11 @@ getToken()
 
 getAccounts(token :string)
 {
-return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} })
+return this.http.get('http://10.173.200.170:3000/axle/getAccounts',{headers: {Authorization: token} });
 }
 getRecipients(token :string)
 {
-return this.http.get('http://10.173.200.170:3000/axle/getRecipients',{headers: {Authorization: token} })
+return this.http.get('http://10.173.200.170:3000/axle/getRecipients',{headers: {Authorization: token} });
 }
 
 transfer( transfer :any, token :any)
@@ -100,5 +100,10 @@ freezeAccounts(token :any)
     })
   )
   return request
+}
+
+getTransfers(account :any, token :any)
+{
+  return this.http.post('http://10.173.200.170:3000/axle/getTransfers',account,{headers: {Authorization: token} });
 }
 }

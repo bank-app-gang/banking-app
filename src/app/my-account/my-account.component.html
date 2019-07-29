@@ -95,7 +95,7 @@
                                             <div *ngFor= "let Transfer of Transfers"  >        
                                               
                                                 <table class="accountTable" >
-                                                    <tr class="rowTable"(click)="getTransactionDetails(Account)">
+                                                    <tr class="rowTable"(click)="getTransactionDetails(Transfer)">
                                                 <td style="width:25%; text-align: center;">{{Transfer.sender_account_num}}</td>
                                                 <td style="width:25%; text-align: center;">{{Transfer.recipient_account_num}}</td>
                                                 <td style="width:25%; text-align: right;">${{Transfer.amount}}</td>

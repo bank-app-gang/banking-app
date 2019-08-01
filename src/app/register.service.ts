@@ -6,6 +6,9 @@ import { map } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RegisterService {
+  gridTable(table: { table: any; }) {
+    throw new Error("Method not implemented.");
+  }
 
  
   returnMessage :any

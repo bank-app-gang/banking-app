@@ -53,6 +53,7 @@ export class GridTableComponent implements OnInit {
     {
       this.returnMessage=data.returnMessage;
       console.log(data);
+      console.log
     })
     
   }
